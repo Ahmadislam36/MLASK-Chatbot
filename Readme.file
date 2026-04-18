@@ -1,31 +1,34 @@
-# 🏥 Medical RAG Chatbot (LangChain + FREE LLM)
+# 🤖 MLASK – Machine Learning RAG Chatbot
 
 ## 📌 Project Overview
 
-This project is a **Medical RAG (Retrieval-Augmented Generation) Chatbot** that provides medical information based on a structured dataset.
+**MLASK** is a **Retrieval-Augmented Generation (RAG) chatbot** designed to help users understand **Machine Learning concepts** in a simple and interactive way.
 
-The system retrieves relevant medical knowledge and generates responses using a **local LLM (Ollama)** — completely **free and offline**.
+It retrieves relevant information from ML documents PDF and generates accurate answers using an LLM.
 
 ---
 
 ## 🚀 Features
 
-* 🔍 Context-based medical question answering (RAG)
-* 🧠 Uses **LangChain** for pipeline management
-* 📦 Vector database using **FAISS**
-* 🤖 Local LLM using **Ollama (Llama3:8b)**
-* 🖥️ Simple UI with **Streamlit**
-* ⚠️ Includes safety responses (doctor recommendation)
+* 🔍 Context-based question answering (RAG)
+* 📄 Supports **PDF-based knowledge**
+* 🧠 Uses **LangChain** for pipeline
+* 📦 Vector database with **FAISS**
+* 🤗 Embeddings via **HuggingFace (MiniLM)**
+* ⚡ LLM powered by **Google Gemini**
+* 🖥️ Interactive UI with **Streamlit**
+* 🧾 Saves vector database for fast reuse
 
 ---
 
 ## 🧠 How It Works
 
-1. User asks a question
-2. Text is converted into embeddings
-3. FAISS retrieves relevant medical data
-4. Context is sent to LLM (Ollama:8b)
-5. LLM generates final answer
+1. User asks a Machine Learning question
+2. PDF content is split into chunks
+3. Chunks are converted into embeddings
+4. FAISS retrieves the most relevant chunks
+5. Context + question is sent to LLM
+6. LLM generates a clear and simple answer
 
 ---
 
@@ -36,21 +39,22 @@ The system retrieves relevant medical knowledge and generates responses using a 
 * FAISS
 * Sentence Transformers
 * Streamlit
-* Ollama (Llama3:8b - Local Model)
+* Google Gemini API
 
 ---
 
 ## 📁 Project Structure
 
 ```
-medical-rag-chatbot/
+mlask-chatbot/
 │
 ├── app.py                # Streamlit UI
 ├── rag_pipeline.py       # RAG logic
 ├── data/
-│   └── medical.txt       # Medical dataset
+│   └── ML.pdf            # Machine Learning dataset
 │
 ├── vectorstore/          # Saved embeddings
+├── .env                  # API key
 └── requirements.txt
 ```
 
@@ -58,28 +62,20 @@ medical-rag-chatbot/
 
 ## ⚙️ Installation
 
+### 1. Clone repository
 
-### 1. Install dependencies
+```
+git clone <your-repo-link>
+cd mlask-chatbot
+```
+
+### 2. Install dependencies
 
 ```
 pip install -r requirements.txt
 ```
 
-### 2. Install Ollama
-
-Download from: https://ollama.com/download
-
----
-
 ## ▶️ Run the Project
-
-### Step 1: Start LLM
-
-```
-ollama run llama3:8b
-```
-
-### Step 2: Run app
 
 ```
 streamlit run app.py
@@ -89,26 +85,28 @@ streamlit run app.py
 
 ## 🧪 Example Queries
 
-* "I have fever what should I do?"
-* "Symptoms of diabetes?"
-* "When is cough dangerous?"
-* "What is stroke?"
+* "What is overfitting in machine learning?"
+* "Explain bias vs variance"
+* "What is gradient descent?"
+* "Difference between supervised and unsupervised learning?"
 
 ---
 
-## ⚠️ Disclaimer
+## ⚠️ Limitations
 
-This chatbot provides **general medical information only**.
-It is not a substitute for professional medical advice.
-Always consult a qualified doctor for serious conditions.
+* Answers depend on provided dataset
+* May not answer questions outside ML domain
+* Requires internet (for Gemini API)
 
 ---
 
 ## 🎯 Future Improvements
 
-* 📄 PDF upload support
+* 📄 Multiple PDF upload support
 * 💬 Chat history (memory)
-* ⚡ FastAPI backend
+* ⚡ FastAPI backend deployment
+* 🌐 Multi-model support (Ollama + Gemini)
+
 ---
 
 ## 👨‍💻 Author
@@ -117,3 +115,6 @@ Ahmad
 AI/ML Engineer
 
 ---
+
+Agar chaho to main isko aur next level bana deta hoon:
+👉 GitHub ke liye badges + screenshots + demo GIF (portfolio ready) 🚀
